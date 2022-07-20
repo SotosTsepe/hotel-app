@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{%- block content %}
+  <p>
+    This is the index page. It will be customized soon.
+  </p>
+  <p>
+    Go to
+    <a href="{{ url_for('ui.admin.index') }}">
+      {{ url_for('ui.admin.index') -}}
+    </a>
+    for stats.
+  </p>
+{%- endblock %}

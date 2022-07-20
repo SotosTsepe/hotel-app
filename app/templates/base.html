@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Flask Based Hotel Management App">
+    <title>Hotel Management</title>
+    <style>
+      ul {
+        text-align: center;
+      }
+      table {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      table, th, td {
+        border: 1px solid;
+      }
+      #content {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+    {%- with messages = get_flashed_messages() %}
+
+      {%- if messages %}
+        <ul>
+          {%- for message in messages %}
+            <li>{{ message }}</li>
+          {%- endfor %}
+        </ul>
+      {%- endif %}
+
+    {%- endwith %}
+
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+
+  </body>
+</html>

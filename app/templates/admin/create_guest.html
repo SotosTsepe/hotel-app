@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{%- block content %}
+
+  <a href="{{ url_for('ui.admin.index') }}">
+    &larr; Back to dashboard
+  </a>
+
+  <h1>Create Guest</h1>
+  <form action="" method="POST">
+    {%- set asterisk = '<span style="color:red">*</span>' %}
+    <p>
+      {{ form.first_name.label }} {{ asterisk|safe }}<br>
+      {{ form.first_name(size=20) }}<br>
+      {%- for error in form.first_name.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.last_name.label }} {{ asterisk|safe }}<br>
+      {{ form.last_name(size=20) }}<br>
+      {%- for error in form.last_name.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.patronymic.label }} {{ asterisk|safe }}<br>
+      {{ form.patronymic(size=20) }}<br>
+      {%- for error in form.patronymic.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.gender.label }} {{ asterisk|safe }}<br>
+      {{ form.gender }}<br>
+      {%- for error in form.gender.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.age.label }} {{ asterisk|safe }}<br>
+      {{ form.age }}<br>
+      {%- for error in form.age.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.member_since.label }}<br>
+      {{ form.member_since }}<br>
+      {%- for error in form.member_since.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.ssn_code.label }} {{ asterisk|safe }}<br>
+      {{ form.ssn_code }}<br>
+      {%- for error in form.ssn_code.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.email.label }} {{ asterisk|safe }}<br>
+      {{ form.email }}<br>
+      {%- for error in form.email.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.phone_no.label }} {{ asterisk|safe }}<br>
+      {{ form.phone_no }}<br>
+      {%- for error in form.phone_no.errors %}
+        <div style="color: red;">[ {{ error }} ]</div>
+      {%- endfor %}
+    </p>
+    <p>
+      {{ form.submit() }}
+    </p>
+    {{ form.hidden_tag() }}
+  </form>
+
+{%- endblock %}
